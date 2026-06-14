@@ -1,6 +1,26 @@
 
 const state = { category: 'Все', q: '', limit: 24 };
 
+const CATEGORY_PHOTOS = {
+  'Саморезы и кровельный крепеж': 'photo/Саморезы.jpg',
+  'Дюбели': 'photo/Дюпель.jpg',
+  'Болты': 'photo/Болты.jpg',
+  'Прочее': 'photo/Болты.jpg',
+  'Такелаж': 'photo/Такелаж.webp',
+  'Заклепки': 'photo/Заклепки.webp',
+  'Анкеры': 'photo/Анкеры.png',
+  'Винты': 'photo/Винты.jpg',
+  'Гайки': 'photo/Гайки.jpg',
+  'Шайбы': 'photo/Шайбы.webp',
+  'Биты и насадки': 'photo/Биты.webp',
+  'Шпильки': 'photo/Шпильки.jpg',
+  'Кляймеры': 'photo/Кляймеры.webp',
+};
+
+function categoryPhoto(name){
+  return CATEGORY_PHOTOS[name] || 'photo/Болты.jpg';
+}
+
 const categoryGrid = document.getElementById('categoryGrid');
 const productGrid = document.getElementById('productGrid');
 const searchInput = document.getElementById('searchInput');
@@ -14,7 +34,7 @@ function money(v){
 function renderCategories(){
   categoryGrid.innerHTML = CATEGORIES.map(cat => `
     <article class="category-card" data-category="${cat.name}">
-      <img src="${cat.image}" alt="${cat.name}">
+      <img src="${categoryPhoto(cat.name)}" alt="${cat.name}">
       <div class="category-info">
         <h3>${cat.name}</h3>
         <p>${cat.description}</p>
@@ -45,20 +65,24 @@ function filtered(){
 function renderProducts(){
   const arr = filtered();
   const list = arr.slice(0,state.limit);
-  productGrid.innerHTML = list.map(p=>`
+  productGrid.innerHTML = list.map(p=>{
+    // <div class="meta">
+    //   <span>Код: <b>${p.code || '—'}</b></span>
+    //   <span>Ед.: <b>${p.unit || '—'}</b></span>
+    //   <span>Остаток: <b>${p.stock || '—'}</b></span>
+    //   <span>№: <b>${p.num}</b></span>
+    // </div>
+    return `
     <article class="product-card">
-      <div class="cat">${p.category}</div>
-      <h3>${p.name}</h3>
-      <div class="meta">
-        <span>Код: <b>${p.code || '—'}</b></span>
-        <span>Ед.: <b>${p.unit || '—'}</b></span>
-        <span>Остаток: <b>${p.stock || '—'}</b></span>
-        <span>№: <b>${p.num}</b></span>
+      <img class="product-photo" src="${categoryPhoto(p.category)}" alt="${p.category}">
+      <div class="product-body">
+        <div class="cat">${p.category}</div>
+        <h3>${p.name}</h3>
+        <div class="price">${money(p.price)}</div>
+        <a href="#request" class="btn secondary" style="margin-top:12px;width:100%">Запросить наличие</a>
       </div>
-      <div class="price">${money(p.price)}</div>
-      <a href="#request" class="btn secondary" style="margin-top:12px;width:100%">Запросить наличие</a>
     </article>
-  `).join('');
+  `}).join('');
   showMore.style.display = arr.length > state.limit ? 'flex' : 'none';
 }
 searchInput.addEventListener('input', e=>{ state.q=e.target.value; state.limit=24; renderProducts(); });
