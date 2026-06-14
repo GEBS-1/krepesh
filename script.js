@@ -2,7 +2,7 @@
 const state = { category: 'Все', q: '', limit: 24 };
 
 const CATEGORY_PHOTOS = {
-  'Саморезы и кровельный крепеж': 'photo/Саморезы.jpg',
+  'Саморезы и кровельный крепеж': 'photo/Саморезы.png',
   'Дюбели': 'photo/Дюпель.jpg',
   'Болты': 'photo/Болты.jpg',
   'Прочее': 'photo/Болты.jpg',
@@ -27,9 +27,11 @@ const searchInput = document.getElementById('searchInput');
 const categorySelect = document.getElementById('categorySelect');
 const showMore = document.getElementById('showMore');
 
-function money(v){
+function money(v, unit){
   if(!v) return 'по запросу';
-  return String(v).replace('.', ',') + ' ₽';
+  const n = String(v).replace('.', ',');
+  const suffix = unit && unit.toLowerCase().includes('кг') ? '/кг' : '';
+  return `От ${n} ₽${suffix}`;
 }
 function renderCategories(){
   categoryGrid.innerHTML = CATEGORIES.map(cat => `
@@ -78,7 +80,7 @@ function renderProducts(){
       <div class="product-body">
         <div class="cat">${p.category}</div>
         <h3>${p.name}</h3>
-        <div class="price">${money(p.price)}</div>
+        <div class="price">${money(p.price, p.unit)}</div>
         <a href="#request" class="btn secondary" style="margin-top:12px;width:100%">Запросить наличие</a>
       </div>
     </article>

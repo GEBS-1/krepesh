@@ -22,18 +22,18 @@ p{font-size:18px;line-height:1.55;color:#475569}
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:14px;padding:14px 22px;font-weight:700;border:1px solid transparent;cursor:pointer}
 .primary{background:var(--accent);color:#fff}.secondary{background:#fff;color:#0f172a;border-color:#e5e7eb}
 .section{padding:64px 7vw}
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-76px;position:relative;z-index:2}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-76px;position:relative;z-index:2}
 .feature-card{background:#fff;border-radius:22px;padding:28px;border:1px solid var(--border);box-shadow:0 12px 40px rgba(15,23,42,.08)}
 .feature-card b{display:block;font-size:30px}.feature-card span{color:#64748b}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:28px}
 .section-head p{max-width:620px;margin:0}
 .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.category-card{min-height:230px;border-radius:24px;overflow:hidden;position:relative;color:#fff;cursor:pointer;background:#111}
-.category-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,23,42,.9),rgba(15,23,42,.15))}
+.category-card{min-height:230px;border-radius:24px;overflow:hidden;position:relative;color:#000;cursor:pointer;background:#fff;border:1px solid var(--border)}
+.category-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(255,255,255,.92),rgba(255,255,255,.55))}
 .category-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0}
 .category-info{position:absolute;inset:auto 0 0 0;padding:22px;z-index:1}
-.category-info h3{margin:0 0 6px;font-size:22px}.category-info p{color:#e2e8f0;font-size:14px;margin:0 0 12px}
-.count{display:inline-flex;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);padding:6px 10px;border-radius:999px;font-size:13px}
+.category-info h3{margin:0 0 6px;font-size:22px;color:#000}.category-info p{color:#000;font-size:14px;margin:0 0 12px}
+.count{display:inline-flex;background:#fff;border:1px solid #cbd5e1;padding:6px 10px;border-radius:999px;font-size:13px;color:#000}
 .products-section{background:#fff}
 .filters{display:flex;gap:12px;margin-bottom:24px}
 input,select{width:100%;border:1px solid #cbd5e1;border-radius:14px;padding:15px 16px;font-size:16px;background:#fff}
