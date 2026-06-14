@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Крепеж и метизы со склада — 500+ позиций</title>
+  <meta name="description" content="Саморезы, болты, гайки, шайбы, дюбели, анкеры, заклепки и такелаж. Подбор крепежа под задачу и заявки через Авито.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">КрепМаркет</div>
+      <a href="#catalog" class="nav-link">Каталог</a>
+      <a href="#request" class="nav-link">Подбор</a>
+      <a href="#contacts" class="nav-link">Контакты</a>
+    </nav>
+    <div class="hero-content">
+      <div class="badge">Остатки со склада • 500+ позиций</div>
+      <h1>Крепеж и метизы для строительства, ремонта и монтажа</h1>
+      <p>Саморезы, болты, гайки, шайбы, дюбели, анкеры, заклепки и такелаж. Посмотрите категории, выберите позиции и напишите нам на Авито для уточнения наличия и цены.</p>
+      <div class="hero-actions">
+        <a href="#catalog" class="btn primary">Смотреть категории</a>
+        <a href="#request" class="btn secondary">Подобрать по задаче</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section features">
+      <div class="feature-card"><b>500+</b><span>товарных позиций</span></div>
+      <div class="feature-card"><b>Склад</b><span>остатки в наличии</span></div>
+      <div class="feature-card"><b>Подбор</b><span>по фото или описанию</span></div>
+      <div class="feature-card"><b>Авито</b><span>быстрая связь и заявки</span></div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="section-head">
+        <h2>Категории товаров</h2>
+        <p>Выберите раздел: внутри каждой категории показаны разновидности товаров из базы остатков.</p>
+      </div>
+      <div id="categoryGrid" class="category-grid"></div>
+    </section>
+
+    <section class="section products-section">
+      <div class="section-head">
+        <h2>Каталог остатков</h2>
+        <p>Поиск по названию, коду, размеру или категории.</p>
+      </div>
+      <div class="filters">
+        <input id="searchInput" placeholder="Например: саморез 4,8x35, DIN 933, дюбель, анкер...">
+        <select id="categorySelect"></select>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+      <button id="showMore" class="btn secondary center">Показать еще</button>
+    </section>
+
+    <section class="section how" id="request">
+      <div class="section-head">
+        <h2>Не знаете, какой крепеж нужен?</h2>
+        <p>Отправьте фото объекта или напишите задачу: забор, кровля, фасад, монтаж утеплителя, металлоконструкция. Мы подберем подходящий крепеж из наличия.</p>
+      </div>
+      <div class="request-box">
+        <div>
+          <h3>Что написать в заявке</h3>
+          <ul>
+            <li>Что нужно закрепить?</li>
+            <li>К чему крепим: дерево, металл, бетон, кирпич?</li>
+            <li>Примерный объем или количество.</li>
+            <li>Фото объекта, если есть.</li>
+          </ul>
+        </div>
+        <div class="cta-card">
+          <h3>Оставить заявку</h3>
+          <p>Кнопки можно заменить на вашу ссылку Авито, WhatsApp или Telegram.</p>
+          <a href="#" class="btn primary">Написать на Авито</a>
+          <a href="#" class="btn secondary">Запросить полный прайс</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contacts" id="contacts">
+      <h2>Контакты</h2>
+      <p>Здесь укажите город, район самовывоза, телефон, Telegram, WhatsApp и ссылку на объявление Авито.</p>
+    </section>
+  </main>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
